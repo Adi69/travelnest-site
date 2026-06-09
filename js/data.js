@@ -7,7 +7,7 @@ const travelDestinations = [
         continent: "Asia",
         type: "cultural",
         budgetLevel: "medium",
-        image: "assets/images/kyoto.jpg",
+        image: "assets/images/Kyoto.jpg",
         description: "Experience the perfect blend of ancient history and breathtaking nature in Japan's cultural heart, famous for its historic temples and sublime bamboo forests.",
         attractions: ["Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove"],
         costs: {
@@ -23,7 +23,7 @@ const travelDestinations = [
         continent: "Asia",
         type: "relaxation",
         budgetLevel: "low",
-        image: "assets/images/bali.jpg",
+        image: "assets/images/Bali.jpg",
         description: "A tropical paradise renowned for its forested volcanic mountains, iconic rice paddies, pristine beaches, and deeply spiritual culture.",
         attractions: ["Ubud Monkey Forest", "Tanah Lot Temple", "Uluwatu Cliff Beach"],
         costs: {
@@ -39,7 +39,7 @@ const travelDestinations = [
         continent: "Europe",
         type: "adventure",
         budgetLevel: "high",
-        image: "assets/images/interlaken.jpg",
+        image: "assets/images/Interlaken.jpg",
         description: "The adventure capital of Europe, nestled between two stunning lakes and surrounded by the magnificent, snow-capped Swiss Alps.",
         attractions: ["Jungfraujoch Sphinx Observatory", "Harder Kulm Viewpoint", "Lake Thun Boat Cruise"],
         costs: {
@@ -55,7 +55,7 @@ const travelDestinations = [
         continent: "America",
         type: "nature",
         budgetLevel: "medium",
-        image: "assets/images/costarica.jpg",
+        image: "assets/images/CostaRica.jpg",
         description: "A rugged, rainforested Central American country with immense biodiversity, active volcanoes, and protected cloud forests.",
         attractions: ["Arenal Volcano National Park", "Manuel Antonio Beaches", "Monteverde Cloud Forest"],
         costs: {
