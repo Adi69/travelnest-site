@@ -5,8 +5,8 @@
 const soundButtons = document.querySelectorAll('.sound-btn');
 
 const soundUrls = {
-    ocean: 'https://assets.mixkit.co/active_storage/sfx/2513/2513-84.wav', 
-    rain: 'https://assets.mixkit.co/active_storage/sfx/2448/2448-84.wav'   
+    ocean: 'assets/audio/ocean.mp3', 
+    rain: 'assets/audio/rain.mp3'   
 };
 
 let activeAudioNode = null;
