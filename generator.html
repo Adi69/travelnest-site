@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Trip Generator & Wishlist - TravelNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Travel<span>Nest</span></a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explorer.html">Explorer</a></li>
+                    <li><a href="budget.html">Budget</a></li>
+                    <li><a href="generator.html" class="active">Generator</a></li>
+                    <li><a href="mood.html">Mood</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content-wrapper container-generator">
+        <section class="generator-intro">
+            <h2>🎲 Random Trip Generator & Wishlist</h2>
+            <p>Can't decide where to go? Roll the travel dice to find a surprise destination, then lock it into your wishlist.</p>
+        </section>
+
+        <div class="generator-grid">
+            
+            <section class="gen-box card-wrapper">
+                <h3>Find Inspiration</h3>
+                <p class="instruction-text">Click the action button below to select a random location from our global destination database matrix.</p>
+                
+                <button id="generateBtn" class="btn btn-secondary gen-action-btn">✨ Roll the Travel Dice</button>
+
+                <div id="generatedResultPlaceholder" class="generated-result-container">
+                    <p class="placeholder-text">Your surprise getaway details will pop up right here!</p>
+                </div>
+            </section>
+
+            <section class="wish-box card-wrapper">
+                <h3>My Saved Travel Wishlist</h3>
+                
+                <div id="wishlistItemsGrid" class="wishlist-items-container">
+                    </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+            <div class="newsletter-form">
+                <h4>Join Our Newsletter</h4>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/generator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Support - TravelNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Travel<span>Nest</span></a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explorer.html">Explorer</a></li>
+                    <li><a href="budget.html">Budget</a></li>
+                    <li><a href="generator.html">Generator</a></li>
+                    <li><a href="mood.html">Mood</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content-wrapper container-feedback">
+        <section class="feedback-intro">
+            <h2>📬 Feedback & Support Desk</h2>
+            <p>Have questions, encountered an issue, or want to share your travel experiences? Drop us a line below.</p>
+        </section>
+
+        <div class="feedback-card-centered">
+            <section class="card-wrapper">
+                <h3>Submit a Support Ticket</h3>
+                
+                <div id="globalFormStatus" class="global-status-alert" style="display: none;"></div>
+
+                <form id="supportForm" novalidate>
+                    <div class="form-control" id="controlName">
+                        <label for="supportName">Full Name</label>
+                        <input type="text" id="supportName" placeholder="e.g. John Doe" required>
+                        <span class="inline-error-msg" id="errorName"></span>
+                    </div>
+
+                    <div class="form-control" id="controlEmail">
+                        <label for="supportEmail">Email Address</label>
+                        <input type="email" id="supportEmail" placeholder="e.g. john@example.com" required>
+                        <span class="inline-error-msg" id="errorEmail"></span>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="supportCategory">What do you need help with?</label>
+                        <select id="supportCategory">
+                            <option value="General Inquiry">General Feedback / Inquiry</option>
+                            <option value="Bug Report">Technical Issue / Bug Report</option>
+                            <option value="Destination Suggestion">Destination Suggestion</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control" id="controlMessage">
+                        <label for="supportMessage">Detailed Message (Minimum 15 Characters)</label>
+                        <textarea id="supportMessage" rows="5" placeholder="Type your message details here..." required></textarea>
+                        <span class="inline-error-msg" id="errorMessage"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-btn">Submit Ticket</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+            <div class="newsletter-form">
+                <h4>Join Our Newsletter</h4>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/feedback.js" defer></script>
+</body>
+</html>

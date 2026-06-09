@@ -1,0 +1,877 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES & BASE RESETS
+   ========================================================================== */
+:root {
+    --primary-color: #0d9488;    
+    --secondary-color: #f59e0b;  
+    --text-color-dark: #1f2937; 
+    --text-color-light: #f9fafb;
+    --bg-light: #f3f4f6;        
+    --bg-card: #ffffff;         
+ 
+    --max-width: 1200px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. REUSABLE UTILITIES & REUSABLE BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION LAYOUT (FLEXBOX)
+   ========================================================================== */
+.site-header {
+    background-color: var(--bg-card);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color-dark);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* Hamburger Hidden on Desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color-dark);
+    border-radius: 3px;
+}
+
+/* ==========================================================================
+   4. BASIC HERO SECTION (For home page layout)
+   ========================================================================== */
+.hero {
+    min-height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/hero-bg.jpg') no-repeat center center/cover;
+    background-color: #2c3e50; /* Fallback color if image is missing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color-light);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+/* ==========================================================================
+   5. FOOTER & NEWSLETTER LAYOUT
+   ========================================================================== */
+.site-footer {
+    background-color: var(--text-color-dark);
+    color: var(--text-color-light);
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.newsletter-form h4 {
+    margin-bottom: 10px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    margin-right: 10px;
+    width: 200px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Media Queries for Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; 
+    }
+
+    .main-nav {
+        display: none; 
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--bg-card);
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav.open {
+        display: block; 
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-container {
+        position: relative;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-form input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   7. DESTINATION OF THE DAY (CSS GRID)
+   ========================================================================== */
+.daily-destination-section {
+    max-width: var(--max-width);
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: var(--text-color-dark);
+}
+
+/* CSS Grid layout: Left text, Right image */
+.daily-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    gap: 40px;
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    align-items: center;
+}
+
+.daily-text-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.daily-text-content .description {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: #4b5563;
+}
+
+.daily-text-content ul {
+    list-style-type: "📍 ";
+    padding-left: 20px;
+}
+
+.daily-text-content li {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.responsive-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Prevents image stretching */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustment: Stack into 1 column on mobile screens */
+@media (max-width: 768px) {
+    .daily-grid-container {
+        grid-template-columns: 1fr; /* Swaps to a single column stack */
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   8. DESTINATION EXPLORER CARDS GRID
+   ========================================================================== */
+.container-explorer {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.explorer-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-panel {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-panel input, .filter-panel select {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.filter-panel input {
+    width: 300px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.destination-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Subtle, smooth hover elevation animations */
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.card-body .location {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.card-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6b7280;
+    padding: 40px;
+}
+
+/* ==========================================================================
+   10. TRIP BUDGET PLANNER LAYOUT SYSTEM
+   ========================================================================== */
+.container-budget {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.budget-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.budget-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+.budget-card-wrapper {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.budget-card-wrapper h3 {
+    margin-bottom: 20px;
+    color: var(--text-color-dark);
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 8px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-control label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-control input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+.form-control input:focus {
+    border-color: var(--primary-color);
+}
+
+.form-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+}
+
+.result-card {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none; 
+}
+
+.result-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.result-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e5e7eb;
+}
+
+.cost-highlight {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.status-low { background-color: #dcfce7; color: #166534; }
+.status-moderate { background-color: #fef3c7; color: #92400e; }
+.status-luxury { background-color: #fee2e2; color: #991b1b; }
+
+.progress-container {
+    margin-top: 25px;
+}
+.progress-container p {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #4b5563;
+}
+.progress-track {
+    width: 100%;
+    height: 12px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    width: 0%; 
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 6px;
+}
+
+.success-alert {
+    color: #166534;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .budget-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   11. RANDOM TRIP GENERATOR & WISHLIST MODULE STYLING
+   ========================================================================== */
+.container-generator {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.generator-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.generator-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+.card-wrapper {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-wrapper h3 {
+    margin-bottom: 15px;
+    color: var(--text-color-dark);
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 8px;
+}
+
+.instruction-text {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.gen-action-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: #9ca3af;
+    font-style: italic;
+    padding: 30px 0;
+}
+
+.surprise-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fbcfe820; 
+}
+
+.surprise-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.surprise-info {
+    padding: 20px;
+}
+
+.surprise-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.wishlist-add-btn {
+    width: 100%;
+    margin-top: 15px;
+    background-color: #db2777; 
+    color: white;
+}
+.wishlist-add-btn:hover {
+    background-color: #be185d;
+}
+
+.wishlist-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.wishlist-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-light);
+    padding: 12px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #db2777; 
+}
+
+.wish-item-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.wish-item-meta strong {
+    font-size: 1rem;
+    color: var(--text-color-dark);
+}
+
+.wish-item-meta span {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.remove-wish-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+    line-height: 1;
+}
+
+.remove-wish-btn:hover {
+    color: #dc2626;
+}
+
+.animated-fade-in {
+    animation: simpleFadeIn 0.5s ease forwards;
+}
+
+@keyframes simpleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .generator-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   12. TRAVEL MOOD & TIMELINE TRACKER MODULE
+   ========================================================================== */
+.container-mood {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.mood-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+/* Sound Control Panels Styles */
+.sound-controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sound-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--bg-light);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all var(--transition-speed);
+}
+
+.sound-card.playing {
+    border-color: var(--primary-color);
+    background-color: #f0fdfa; 
+    box-shadow: 0 4px 10px rgba(13, 148, 136, 0.1);
+}
+
+.sound-icon {
+    font-size: 2rem;
+}
+
+.sound-card h4 {
+    flex-grow: 1;
+    font-size: 1.05rem;
+}
+
+.audio-notice {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.itinerary-form-layout {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.form-row-split {
+    display: flex;
+    gap: 15px;
+}
+
+.activity-input-grow {
+    flex-grow: 1;
+}
+
+.itinerary-form-layout select {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
+    outline: none;
+}
+
+.itinerary-list-output {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.itinerary-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    transition: all var(--transition-speed) ease;
+}
+
+.itinerary-item-row.task-done {
+    opacity: 0.5;
+    background-color: #f9fafb;
+    border-left: 4px solid #9ca3af;
+}
+
+.itinerary-item-row.task-done .activity-text {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.itinerary-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.day-indicator {
+    background-color: #f3f4f6;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
+    white-space: nowrap;
+}
+
+.activity-text {
+    font-weight: 500;
+    color: var(--text-color-dark);
+    font-size: 0.95rem;
+}
+
+.itinerary-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.task-toggle-check {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.delete-itinerary-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+.delete-itinerary-btn:hover {
+    color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    .mood-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .form-row-split {
+        flex-direction: column;
+        gap: 0;
+    }
+}

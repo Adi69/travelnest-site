@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Mood & Itinerary - TravelNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Travel<span>Nest</span></a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explorer.html">Explorer</a></li>
+                    <li><a href="budget.html">Budget</a></li>
+                    <li><a href="generator.html">Generator</a></li>
+                    <li><a href="mood.html" class="active">Mood</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content-wrapper container-mood">
+        <section class="mood-intro">
+            <h2>✨ Travel Mood & Trip Tracker</h2>
+            <p>Immerse yourself in relaxed background travel frequencies while tracking your day-to-day itineraries.</p>
+        </section>
+
+        <div class="mood-grid">
+            
+            <section class="mood-card card-wrapper">
+                <h3>🎵 Ambient Soundscapes</h3>
+                <p class="instruction-text">Select an environmental sound layer below to set your planning mood. Click again to pause.</p>
+                
+                <div class="sound-controls-container">
+                    <div class="sound-card" id="soundCardOcean">
+                        <span class="sound-icon">🌊</span>
+                        <h4>Ocean Waves</h4>
+                        <button class="btn btn-primary sound-btn" data-sound="ocean">Play Sound</button>
+                    </div>
+
+                    <div class="sound-card" id="soundCardRain">
+                        <span class="sound-icon">🌧️</span>
+                        <h4>Mountain Rain</h4>
+                        <button class="btn btn-primary sound-btn" data-sound="rain">Play Sound</button>
+                    </div>
+                </div>
+                <p class="audio-notice">⚠️ Note: Audio uses royalty-free streaming source placeholders.</p>
+            </section>
+
+            <section class="itinerary-card card-wrapper">
+                <h3>📅 My Live Itinerary Tracker</h3>
+                
+                <form id="itineraryForm" class="itinerary-form-layout" novalidate>
+                    <div class="form-row-split">
+                        <div class="form-control">
+                            <label for="itineraryDay">Day</label>
+                            <select id="itineraryDay" required>
+                                <option value="Day 1">Day 1</option>
+                                <option value="Day 2">Day 2</option>
+                                <option value="Day 3">Day 3</option>
+                                <option value="Day 4">Day 4</option>
+                            </select>
+                        </div>
+                        <div class="form-control activity-input-grow">
+                            <label for="itineraryActivity">Planned Activity / Sightseeing</label>
+                            <input type="text" id="itineraryActivity" placeholder="e.g. Morning visit to Golden Pavilion" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary form-btn">➕ Add To Itinerary</button>
+                </form>
+
+                <div id="itineraryListContainer" class="itinerary-list-output">
+                    </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+            <div class="newsletter-form">
+                <h4>Join Our Newsletter</h4>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/mood.js" defer></script>
+</body>
+</html>

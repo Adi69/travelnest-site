@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelNest - Your Ultimate Travel Planner</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Travel<span>Nest</span></a>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="explorer.html">Explorer</a></li>
+                    <li><a href="budget.html">Budget</a></li>
+                    <li><a href="generator.html">Generator</a></li>
+                    <li><a href="mood.html">Mood</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="hero">
+            <h1>Explore the World, Safely and Effortlessly</h1>
+            <p>Your all-in-one platform to plan trips, track budgets, and find hidden travel inspiration.</p>
+            <a href="explorer.html" class="btn btn-primary">Start Exploring</a>
+        </section>
+
+        <section class="daily-destination-section">
+            <div class="section-title">
+                <h2>⭐ Destination of the Day</h2>
+                <p>Handpicked inspiration, changing every single day.</p>
+            </div>
+            
+            <div class="daily-grid-container" id="dailyDestinationContainer">
+                </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+            
+            <div class="newsletter-form">
+                <h4>Join Our Newsletter</h4>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

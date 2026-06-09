@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Budget Planner - TravelNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Travel<span>Nest</span></a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explorer.html">Explorer</a></li>
+                    <li><a href="budget.html" class="active">Budget</a></li>
+                    <li><a href="generator.html">Generator</a></li>
+                    <li><a href="mood.html">Mood</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content-wrapper container-budget">
+        <section class="budget-intro">
+            <h2>📊 Trip Budget Planner</h2>
+            <p>Calculate your estimated travel expenses and see your budget profile in real-time.</p>
+        </section>
+
+        <div class="budget-grid">
+            
+            <section class="budget-card-wrapper">
+                <h3>Plan Your Expenses</h3>
+                <form id="budgetForm" novalidate>
+                    <div class="form-control">
+                        <label for="budgetDestination">Where are you going?</label>
+                        <input type="text" id="budgetDestination" placeholder="e.g. Kyoto, Bali, Paris" required>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="tripDays">Number of Days</label>
+                        <input type="number" id="tripDays" min="1" placeholder="e.g. 7" required>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="dailyExpense">Estimated Daily Budget ($)</label>
+                        <input type="number" id="dailyExpense" min="1" placeholder="e.g. 50" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-btn">Calculate Total Cost</button>
+                </form>
+            </section>
+
+            <section class="budget-card-wrapper result-card" id="resultCard">
+                <h3>Calculation Summary</h3>
+                
+                <div class="result-stat">
+                    <span>Target Destination:</span>
+                    <strong id="outDestination">-</strong>
+                </div>
+
+                <div class="result-stat">
+                    <span>Estimated Total Cost:</span>
+                    <strong id="outTotal" class="cost-highlight">$0</strong>
+                </div>
+
+                <div class="result-stat">
+                    <span>Budget Classification:</span>
+                    <span id="outStatus" class="status-badge">-</span>
+                </div>
+
+                <div class="progress-container">
+                    <p>Expense Allocation Tier</p>
+                    <div class="progress-track">
+                        <div class="progress-bar-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>Low ($0-$300)</span>
+                        <span>Moderate</span>
+                        <span>Luxury ($1000+)</span>
+                    </div>
+                </div>
+
+                <button id="saveBudgetBtn" class="btn btn-secondary form-btn" style="margin-top: 20px;">💾 Save This Budget</button>
+                <p id="savedFeedbackMsg" class="success-alert" style="display: none;">Trip budget saved successfully!</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 TravelNest. All rights reserved.</p>
+            <div class="newsletter-form">
+                <h4>Join Our Newsletter</h4>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/budget.js" defer></script>
+</body>
+</html>
