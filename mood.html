@@ -62,23 +62,24 @@
                 <h3>📅 My Live Itinerary Tracker</h3>
                 
                 <form id="itineraryForm" class="itinerary-form-layout" novalidate>
-                    <div class="form-row-split">
-                        <div class="form-control">
-                            <label for="itineraryDay">Day</label>
-                            <select id="itineraryDay" required>
-                                <option value="Day 1">Day 1</option>
-                                <option value="Day 2">Day 2</option>
-                                <option value="Day 3">Day 3</option>
-                                <option value="Day 4">Day 4</option>
-                            </select>
-                        </div>
-                        <div class="form-control activity-input-grow">
-                            <label for="itineraryActivity">Planned Activity / Sightseeing</label>
-                            <input type="text" id="itineraryActivity" placeholder="e.g. Morning visit to Golden Pavilion" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-secondary form-btn">➕ Add To Itinerary</button>
-                </form>
+    <div class="form-row-split">
+        <div class="form-control">
+            <label for="itineraryDay">Day</label>
+            <select id="itineraryDay" required>
+                <option value="" disabled selected>Select a day</option>
+                <option value="Day 1">Day 1</option>
+                <option value="Day 2">Day 2</option>
+                <option value="Day 3">Day 3</option>
+                <option value="Day 4">Day 4</option>
+            </select>
+        </div>
+        <div class="form-control activity-input-grow">
+            <label for="itineraryActivity">Planned Activity / Sightseeing</label>
+            <input type="text" id="itineraryActivity" placeholder="e.g. Morning visit to Golden Pavilion" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-secondary form-btn">➕ Add To Itinerary</button>
+</form>
 
                 <div id="itineraryListContainer" class="itinerary-list-output">
                     </div>
