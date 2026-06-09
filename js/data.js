@@ -52,7 +52,7 @@ const travelDestinations = [
         id: 4,
         name: "Costa Rica Rainforest",
         country: "Costa Rica",
-        continent: "Americas",
+        continent: "America",
         type: "nature",
         budgetLevel: "medium",
         image: "assets/images/costarica.jpg",
@@ -63,5 +63,39 @@ const travelDestinations = [
             food: "$25/day",
             transport: "$20/day"
         }
+    },
+    {
+        id:5,
+        name: "Sigiriya",
+        country: "Sri Lanka",
+        continent: "Asia",
+        type: "Cultural",
+        budgetLevel: "low",
+        image:"assets/images/Sigiriya.jpg",
+        description: "An ancient rock fortress dominated by a massive column of rock nearly 200 meters high. It features historic frescoes, structural engineering marvels, and royal water gardens." ,
+        attractions: ["Lion Rock Fortress","Sigiriya Frescoes","The Mirror Wall"],
+        costs: {
+            accommodation: "$40/night",
+            food: "$15/day",
+            transport: "$20/day"
+        }
+
+    },
+    {
+        id:6,
+        name:"Venice",
+        country:"Italy",
+        continent: "Europe",
+        type: "relaxation",
+        budgetLevel:"high",
+        image:"assets/images/Venice.jpg",
+        description: "The famed city of canals built on more than 100 small islands in an Adriatic Sea lagoon, globally renowned for its beautiful Gothic architecture and romantic gondola rides.",
+        attractions: ["St. Mark's Basilica","The Grand Canal","Rialto Bridge"],
+        costs: {
+            accomodation: "$130/night",
+            food: "$45/day",
+            transport: "$25/day"
+        }
     }
+
 ];

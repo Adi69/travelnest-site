@@ -1,6 +1,6 @@
-// ==========================================
-// DESTINATION EXPLORER CARD RENDERING & FILTERS
-// ==========================================
+/* ==========================================
+   DESTINATION EXPLORER CARD RENDERING & FILTERS
+   ==========================================*/
 
 const destinationsGrid = document.getElementById('destinationsGrid');
 const searchInput = document.getElementById('searchInput');

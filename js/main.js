@@ -7,9 +7,9 @@ menuToggle.addEventListener('click', function() {
     
 });
 
-// ==========================================
-// DESTINATION OF THE DAY LOGIC
-// ==========================================
+/* ======================
+   DESTINATION OF THE DAY 
+   ======================*/
 
 function displayDestinationOfTheDay() {
     const dailyContainer = document.getElementById('dailyDestinationContainer');
